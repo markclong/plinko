@@ -14,6 +14,14 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
+void blinks(int slot) {
+  if(slot == HIGH) {
+    digitalWrite(LED_BUILTIN, LOW);
+  } else {
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
+}
+
 void loop() {
   int reading_slot1 = digitalRead(SLOT1);
   int reading_slot2 = digitalRead(SLOT2);
@@ -21,15 +29,9 @@ void loop() {
   int reading_slot4 = digitalRead(SLOT4);
   int reading_slot5 = digitalRead(SLOT5);
   
-  if(reading_slot1 == HIGH) {
-    digitalWrite(LED_BUILTIN, LOW);
-  } else {
-    digitalWrite(LED_BUILTIN, HIGH);
-  }
-
-  if(reading_slot2 == HIGH) {
-    digitalWrite(LED_BUILTIN, LOW);
-  } else {
-    digitalWrite(LED_BUILTIN, HIGH);
-  }
+  blinks(reading_slot1);
+  blinks(reading_slot2);
+  blinks(reading_slot3);
+  blinks(reading_slot4);
+  blinks(reading_slot5);
 } 
