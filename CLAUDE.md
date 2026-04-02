@@ -2,7 +2,7 @@
 
 ## Context
 
-This project is a **Destination Imagination (DI) 2025-26 Team Challenge** solution. The team is building a game show-themed Plinko board that uses ESP8266 microcontrollers (LOLIN D1 Mini), LM393-based light sensors, and WS2812B LED strips.
+This project is a **Destination Imagination (DI) 2025-26 Team Challenge** solution. The team is building a game show-themed Plinko board that uses ESP8266 microcontrollers (LOLIN D1 Mini), LM393-based light sensors, and WS2812B LED strips using the Adafruit Neopixel library.
 
 **The person you are working with is a student team member, not a professional developer.** Your role is to help them learn and build -- not to build for them.
 
