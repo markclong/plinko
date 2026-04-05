@@ -31,28 +31,47 @@ void setup() {
 
 }
 
-void blinks(int slot, int red, int green, int blue) {
-  if(slot == HIGH) {
-    for(int i = 0; i<NUM_LEDS; i++) {
-      strip.setPixelColor(i, red, green, blue); 
-    }
-    strip.show();
-  } else {
-    strip.clear();
-    strip.show();
+void turnOn(int red, int green, int blue) {
+  for(int i = 0; i<NUM_LEDS; i++) {
+    strip.setPixelColor(i, red, green, blue); 
   }
+  strip.show();
+}
+
+void turnOff() {
+  strip.clear();
+  strip.show();
 }
 
 void loop() {
-  int reading_slot1 = digitalRead(SLOT1);
-  int reading_slot2 = digitalRead(SLOT2);
-  int reading_slot3 = digitalRead(SLOT3);
-  int reading_slot4 = digitalRead(SLOT4);
-  int reading_slot5 = digitalRead(SLOT5);
+  int reading_slot1 = digitalRead(SLOT1); // 1
+  int reading_slot2 = digitalRead(SLOT2); // 0
+  int reading_slot3 = digitalRead(SLOT3); // 0
+  int reading_slot4 = digitalRead(SLOT4); // 0
+  int reading_slot5 = digitalRead(SLOT5); // 0
+
+  if(reading_slot1 == HIGH){
+    turnOn(237, 40, 40);
+  } 
   
-  blinks(reading_slot1, 237, 40, 40);
-  blinks(reading_slot2, 240, 34, 150 );
-  blinks(reading_slot3, 182, 34, 240);
-  blinks(reading_slot4, 0, 0, 255);
-  blinks(reading_slot5, 0, 255, 0);
+  if(reading_slot2 == HIGH){
+    turnOn(240, 34, 150 );
+  }
+
+  if(reading_slot3 == HIGH){
+    turnOn(182, 34, 240);
+  }
+
+  if(reading_slot4 == HIGH){
+    turnOn(0, 0, 255);
+  }
+
+  if(reading_slot5 == HIGH){
+    turnOn(0, 255, 0);
+  }
+
+  if(reading_slot1 || reading_slot2 || reading_slot3 || reading_slot4 || reading_slot5) {
+    turnOff();
+  }
 } 
+
