@@ -44,22 +44,22 @@ void turnOff() {
 }
 
 void loop() {
-  int reading_slot1 = digitalRead(SLOT1); // 1
-  int reading_slot2 = digitalRead(SLOT2); // 0
-  int reading_slot3 = digitalRead(SLOT3); // 0
-  int reading_slot4 = digitalRead(SLOT4); // 0
-  int reading_slot5 = digitalRead(SLOT5); // 0
+  int reading_slot1 = digitalRead(SLOT1);
+  int reading_slot2 = digitalRead(SLOT2);
+  int reading_slot3 = digitalRead(SLOT3);
+  int reading_slot4 = digitalRead(SLOT4);
+  int reading_slot5 = digitalRead(SLOT5);
 
   if(reading_slot1 == HIGH){
-    turnOn(237, 40, 40);
+    turnOn(255, 132, 0);
   } 
   
   if(reading_slot2 == HIGH){
-    turnOn(240, 34, 150 );
+    turnOn(0, 250, 250);
   }
 
   if(reading_slot3 == HIGH){
-    turnOn(182, 34, 240);
+    turnOn(97, 0, 252);
   }
 
   if(reading_slot4 == HIGH){
@@ -67,7 +67,7 @@ void loop() {
   }
 
   if(reading_slot5 == HIGH){
-    turnOn(0, 255, 0);
+    turnOn(255, 0, 191);
   }
 
   if(reading_slot1 || reading_slot2 || reading_slot3 || reading_slot4 || reading_slot5) {
